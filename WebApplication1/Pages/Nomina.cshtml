@@ -1,0 +1,46 @@
+﻿@page
+@model RAZOR_Prac_2.Pages.NominaModel
+@{
+}
+
+
+<h1>NOMINA EMPLEADOS 2021</h1>
+
+<table class="table-bordered border-bottom">
+
+    <thead>
+        <tr class="border-dark">
+            <th class="text-center">Nombres</th>
+            <th class="text-center">Apellidos</th>
+            <th class="text-center">Cargo</th>
+            <th class="text-center">Salario Mensual</th>
+            <th class="text-center">Descuento AFP</th>
+            <th class="text-center">Descuento ARS</th>
+            <th class="text-center">Descuento ISR</th>
+            <th class="text-center">Total de descuentos</th>
+            <th class="text-center">Salario Neto</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        @foreach (var emp in Model.empleados)
+        {
+        <tr class="border borderer">
+            <td class="pt-md-4">@emp._nombre</td>
+            <td class="pt-md-4">@emp._apellido</td>
+            <td class="pt-md-4">@emp._cargo</td>
+            <td class="pt-lg-3">RD $ @emp._salario</td>
+            <td class="pt-lg-3">RD $ @emp.Dfp</td>
+            <td class="pt-lg-3">RD $ @emp.Drs</td>
+            <td class="pt-lg-3">RD $ @emp.Disr</td>
+            <td class="pt-lg-3">RD $ @emp.Td</td>
+            <td class="pt-lg-3">RD $ @emp.Sn</td>
+        </tr>
+
+        }
+
+
+    </tbody>
+
+</table>
